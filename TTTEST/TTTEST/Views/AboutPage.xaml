@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TTTEST.Views.AboutPage"
+             xmlns:vm="clr-namespace:TTTEST.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+        
+        
+    </ContentPage.Resources>
+
+    
+        <Grid>
+       
+        <StackLayout Grid.Row="0" Margin="0,30,0,0" HorizontalOptions="Center">
+            <Image HeightRequest="120" WidthRequest="120" Source="logo.png" BackgroundColor="Blue"/>
+
+            <Label Text="여의도 순복음 교회에 오신 것을 환영합니다." Margin="0, 30, 0, 100" TextColor="#4c4c4c" FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Margin="45,-30,40,0" VerticalOptions="CenterAndExpand">
+            <Entry x:Name="entEmail" Placeholder="이메일" PlaceholderColor="#4c4c4c"/>
+            <Entry x:Name="entPassword" Placeholder="패스워드" IsPassword="True" PlaceholderColor="#4c4d4c"/>
+            <Button x:Name="btnLogin" Text="로그인" BackgroundColor="#ff5e00" TextColor="#ffff" Clicked="sdcLogin_Clicked" ></Button>
+            <StackLayout Grid.Row="2" Padding="10" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label x:Name="sdcFindPassword" Text="비밀번호 찾기"  ></Label>
+                <Label Text="신규가입" TextColor="#ff5e00">
+                    <Label.GestureRecognizers>
+                        <!--<TapGestureRecognizer x:Name="sdcSign" Tapped="sdcSign_Tapped"/>-->
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+            </StackLayout>
+        </StackLayout>
+
+      
+            
+            
+    </Grid>
+
+</ContentPage>
